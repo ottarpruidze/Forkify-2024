@@ -19,5 +19,16 @@
     "webpack": "~4.44.2",
     "webpack-cli": "~3.3.12",
     "webpack-dev-server": "~3.11.0"
-  }
+  },
+  "dependencies": {
+    "axios": "^1.6.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ottarpruidze/Forkify-2024.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ottarpruidze/Forkify-2024/issues"
+  },
+  "homepage": "https://github.com/ottarpruidze/Forkify-2024#readme"
 }
