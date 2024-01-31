@@ -8,7 +8,7 @@ import * as recipeView from "./views/recipeViews.js";
 import * as ListView from "./views/listView.js";
 import * as likeView from "./views/likeView.js";
 import List from "./modules/List.js";
-import Likes from "./modules/Like.js";
+import Likes from "./modules/Likes.js";
 /*
 - Search object
 - Current recipe object
@@ -18,7 +18,7 @@ import Likes from "./modules/Like.js";
 const state = {};
 window.state = state;
 
-/* Search */
+/* Search */ 
 const controlSearch = async (e) => {
     e.preventDefault()
     
@@ -179,7 +179,7 @@ elements.shopping.addEventListener("click", (e) => {
         ListView.deleteItem(id);
     }else if (e.target.matches(".shopping__count-value")){
         //update
-        const val = parseInt(e.target.value,10)
+        const val = parseInt(e.target.value,10);
         state.list.updateCount(id, val);
 
     }

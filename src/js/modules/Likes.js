@@ -4,12 +4,14 @@ export default class Likes {
     }
 
     addLike(id, title, img, author){
+    
         const like = {id, title, img, author};
         this.likes.push(like);
 
         this.persistData();
 
         return like
+
     }
 
     deleteLike(id){
