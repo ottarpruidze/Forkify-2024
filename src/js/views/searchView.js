@@ -9,7 +9,32 @@ import { elements } from "./base";
   elements.searchResPage.innerHTML = '';
 }
 
+export const baqarTitle = (title, limit = 17) => {
+    if(title.length <= 17) return title;
+    let newTitle = "";
+    let finalLimit = 0;
+    for (let index = limit - 1; index >= 0; index--) {
+        if(title[index] === " "){
+            finalLimit = index
+            break;
+        }
+    }
 
+    for (let index = 0; index < finalLimit; index++) {
+        newTitle += title[index];
+        
+    }
+
+    return `${newTitle}...`
+}
+
+export const highlitedSelected = (id) => {
+    const resultArr = [...document.querySelectorAll('.results__link')]
+
+    resultArr.forEach(el => el.classList.remove('results__link--active'))
+
+    document.querySelector(`a[href="#${id}"]`).classList.add("'results__link--active");
+}
 
 const LimitRecipeTitle = (title, limit = 25) => {
     const newTitle = []
@@ -21,9 +46,9 @@ const LimitRecipeTitle = (title, limit = 25) => {
 
             return acc + cur.length
 
-        }, 0)
+        }, 0);
 
-        return  `${newTitle.join("")}...`
+        return  `${newTitle.join(" ")}...` 
     }
 
     return title;
@@ -38,7 +63,7 @@ const LimitRecipeTitle = (title, limit = 25) => {
                     <img src="${recipe.image_url}" alt="Test">
                 </figure>
                 <div class="results__data">
-                    <h4 class="results__name">${LimitRecipeTitle(recipe.title)}</h4>
+                    <h4 class="results__name">${baqarTitle(recipe.title)}</h4>
                     <p class="results__author">${recipe.publisher}</p>
                 </div>
             </a>
